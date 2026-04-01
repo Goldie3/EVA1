@@ -1,9 +1,3 @@
-div{
-    width: 300px;
-  border: 15px solid rgb(255, 255, 255);
-  padding: 50px;
-  margin: 20px;
-}
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -52,33 +46,74 @@ main {
     cursor: pointer;
     padding:0;
     position: relative;
-    width:auto;
+    width:30vw;
     box-shadow: 0 0 10px #000000;
     border: none;
     background: none;
     border-radius:25px;
 }
 .previewImg {
-    width: 400px;
+    width: 100%;
     display:block;
     border-radius:25px;
+    object-fit:fill;
+    position: absolute
+}
+
+.mirarVideo {
+    opacity:0;
+    width: 100%;
+    display:block;
+    border-radius:25px;
+    object-fit:fill;
+    position: absolute;
 }
 
 
-@keyframes fadeIn {
-    from {
-        background-color: #333333;
-    }
-    to {
-        background-color: #dddddd;
-        color: #333;
-    }
+.buttonPreview:hover .mirarVideo {
+    opacity:1;
 }
-@keyframes scale {
-    from {
-        scale: 0;
-    }
-    to {
-        scale: 0.1;
-    }
+
+.buttonPreview:hover .previewImg {
+    opacity:0.2;
+}
+
+.uivisualizador {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    max-width: 700px;
+    min-width: 300px;
+    height: auto;
+    padding: 12px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(34, 34, 34, 0.95);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0,0,0,0.35);
+    z-index: 9999;
+}
+
+.uivisualizador img,
+.uivisualizador video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cerrar{
+    color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.cerrar:hover,
+.cerrar:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
