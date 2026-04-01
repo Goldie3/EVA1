@@ -6,9 +6,9 @@ div{
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #979797;
+    background-color: #ffffff;
     margin: 0px;
-    padding: 0;
+    padding: 60px;
     display: flex;
     flex-direction:column;
     align-items:baseline;
@@ -19,10 +19,11 @@ body {
 header {
     top: 0;
     margin-bottom: 10px;
+    margin-left: -60px;
     background-color: #393751;
     color: white;
     padding-left: 10px;
-    position:relative;
+    position:absolute;
     text-align: left;
     width: 100%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -36,6 +37,7 @@ footer {
     background-color: #393751;
     color: white;
     width: 100%;
+    margin-left: -60px;
     bottom: 0;
 }
 p {
@@ -48,16 +50,18 @@ main {
 
 .buttonPreview {
     cursor: pointer;
+    padding:0;
     position: relative;
-    flex-direction: column;
-
-
+    width:auto;
+    box-shadow: 0 0 10px #000000;
+    border: none;
+    background: none;
+    border-radius:25px;
 }
-
 .previewImg {
     width: 400px;
-    height: auto;
-    max-width:100%;
+    display:block;
+    border-radius:25px;
 }
 
 
