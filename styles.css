@@ -7,24 +7,22 @@ div{
 body {
     font-family: Arial, sans-serif;
     background-color: #979797;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction:column;
+    align-items:baseline;
+    justify-content:start;
     height: 100vh;
 }
 
 header {
     top: 0;
-    left: 0;
+    margin-bottom: 10px;
     background-color: #393751;
     color: white;
-    margin: 0;
-    padding: 0;
     padding-left: 10px;
-    position: fixed;
+    position:relative;
     text-align: left;
     width: 100%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -48,11 +46,18 @@ main {
     text-align: center;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #4551d3;
-    font-size: 16px;
-    margin-top: 20px;
+.buttonPreview {
+    cursor: pointer;
+    position: relative;
+    flex-direction: column;
+
+
+}
+
+.previewImg {
+    width: 400px;
+    height: auto;
+    max-width:100%;
 }
 
 
