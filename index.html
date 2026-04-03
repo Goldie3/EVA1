@@ -15,19 +15,25 @@
 <body>
 
     <h2>Juegos de la semana</h2>
-    <button class="buttonPreview">
-        <img class="previewImg" src="pagina/videos/DBLTrailerpreview.jpg">
-        <img class="mirarVideo" src="pagina/videos/mirarvideo.png">
-    </button>
+    <div class="contenedorbotones">
+        <button class="botonMirar" data-video="DBLTrailer.mp4">
+            <img class="previewImg" src="pagina/videos/DBLTrailerpreview.jpg">
+            <img class="mirarVideo" src="pagina/videos/mirarvideo.png">
+        </button>
+        <button class="botonMirar" data-video="DokkanTrailer.mp4">
+            <img class="previewImg" src="pagina/videos/DokkanTrailepreview.jpg">
+            <img class="mirarVideo" src="pagina/videos/mirarvideo.png">
+        </button>
+    </div>
 
-    <div id = "miUiVisualizador" class="uivisualizador">
+    <div class="fondovisualizador">
+        <div id="miUiVisualizador" class="uivisualizador">
 
-        <div class="visualizador">
-            <span class="cerrar">&times;</span>
-            <video width="620" height="840" controls>
-                <source src="pagina/videos/DBLTrailer.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
+            <div class="visualizador">
+                <span class="cerrar">&times;</span>
+                <video class="video" width="620" height="840" controls>
+                </video>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

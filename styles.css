@@ -4,12 +4,11 @@ body {
     margin: 0px;
     padding: 60px;
     display: flex;
-    flex-direction:column;
-    align-items:baseline;
-    justify-content:start;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
     height: 100vh;
 }
-
 header {
     top: 0;
     margin-bottom: 10px;
@@ -17,11 +16,12 @@ header {
     background-color: #393751;
     color: white;
     padding-left: 10px;
-    position:absolute;
+    position: absolute;
     text-align: left;
     width: 100%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 footer {
     margin: 0;
     padding: 0;
@@ -34,52 +34,62 @@ footer {
     margin-left: -60px;
     bottom: 0;
 }
+
 p {
-   font-size: small; 
-   font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 main {
     text-align: center;
 }
 
-.buttonPreview {
+.contenedorbotones {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.botonMirar {
+    display: flex;
     cursor: pointer;
-    padding:0;
+    padding: 0;
     position: relative;
-    width:30vw;
+    width: 30vw;
     box-shadow: 0 0 10px #000000;
     border: none;
     background: none;
-    border-radius:25px;
+    border-radius: 25px;
 }
+
 .previewImg {
     width: 100%;
-    display:block;
-    border-radius:25px;
-    object-fit:fill;
+    display: block;
+    border-radius: 25px;
+    object-fit: fill;
     position: absolute
 }
 
 .mirarVideo {
-    opacity:0;
+    opacity: 0;
     width: 100%;
-    display:block;
-    border-radius:25px;
-    object-fit:fill;
+    display: block;
+    border-radius: 25px;
+    object-fit: fill;
     position: absolute;
 }
 
 
-.buttonPreview:hover .mirarVideo {
-    opacity:1;
+.botonMirar:hover .mirarVideo {
+    opacity: 1;
 }
 
-.buttonPreview:hover .previewImg {
-    opacity:0.2;
+.botonMirar:hover .previewImg {
+    opacity: 0.2;
 }
 
 .uivisualizador {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -92,11 +102,37 @@ main {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
     background: rgba(34, 34, 34, 0.95);
     color: #fff;
-    box-shadow: 0 0 12px rgba(0,0,0,0.35);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
     z-index: 9999;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.uivisualizador.activo {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.fondovisualizador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 9998;
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.fondovisualizador.activo {
+    visibility: visible;
+    opacity: 1;
 }
 
 .uivisualizador img,
@@ -105,15 +141,29 @@ main {
     height: 100%;
     object-fit: cover;
 }
-.cerrar{
+
+.cerrar {
     color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
+
 .cerrar:hover,
 .cerrar:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes animatetop {
+    from {
+        top: 200px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
 }

@@ -1,27 +1,37 @@
 var uiVisualizador = document.getElementById("miUiVisualizador");
-var btns = document.querySelectorAll(".buttonPreview");
+var fondoVisualizador = document.querySelector(".fondovisualizador");
+var btns = document.querySelectorAll(".botonMirar");
 var closeBtns = document.querySelectorAll(".cerrar");
+var video = uiVisualizador.querySelector("video");
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    uiVisualizador.style.display = "flex";
-    uiVisualizador.style.alignItems = "center";
-    uiVisualizador.style.justifyContent = "center";
+    var videoSrc = btn.dataset.video;
+    video.src = "pagina/videos/" + videoSrc;
+    video.load();
+    fondoVisualizador.classList.add("activo");
+    uiVisualizador.classList.add("activo");
     document.body.classList.add("visualizador-activo");
   });
 });
 
+function pausarVideo() {
+    video.pause();
+  }
+
 function cerrarVisualizador() {
-  uiVisualizador.style.display = "none";
+  uiVisualizador.classList.remove("activo");
+  fondoVisualizador.classList.remove("activo");
   document.body.classList.remove("visualizador-activo");
+  pausarVideo();
 }
 
 closeBtns.forEach(function (span) {
   span.addEventListener("click", cerrarVisualizador);
 });
 
-window.addEventListener("click", function (event) {
-  if (event.target === uiVisualizador) {
-    uiVisualizador.style.display = "none";
+fondoVisualizador.addEventListener("click", function (event) {
+  if (event.target === fondoVisualizador) {
+    cerrarVisualizador();
   }
 });
