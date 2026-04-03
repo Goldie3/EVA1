@@ -3,12 +3,25 @@ var fondoVisualizador = document.querySelector(".fondovisualizador");
 var btns = document.querySelectorAll(".botonMirar");
 var closeBtns = document.querySelectorAll(".cerrar");
 var video = uiVisualizador.querySelector("video");
+var youtubeWrapper = uiVisualizador.querySelector(".youtube-wrapper");
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     var videoSrc = btn.dataset.video;
-    video.src = "pagina/videos/" + videoSrc;
-    video.load();
+    var videoType = btn.dataset.type || "local";
+    
+    if (videoType === "youtube") {
+      video.style.display = "none";
+      youtubeWrapper.style.display = "block";
+      var iframe = youtubeWrapper.querySelector("iframe");
+      iframe.src = videoSrc;
+    } else {
+      youtubeWrapper.style.display = "none";
+      video.style.display = "block";
+      video.src = "pagina/videos/" + videoSrc;
+      video.load();
+    }
+    
     fondoVisualizador.classList.add("activo");
     uiVisualizador.classList.add("activo");
     document.body.classList.add("visualizador-activo");
@@ -17,6 +30,8 @@ btns.forEach(function (btn) {
 
 function pausarVideo() {
     video.pause();
+    var iframe = youtubeWrapper.querySelector("iframe");
+    if (iframe) iframe.src = "";
   }
 
 function cerrarVisualizador() {
