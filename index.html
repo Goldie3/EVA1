@@ -55,7 +55,35 @@
             </div>
         </div>
     </div>
+
+    <h2>Contáctanos</h2>
     <script src="script.js"></script>
+
+    <form class="formulario" action="/action_page.html">
+
+        <div class="campo">
+            <label for="fnombre">Nombre</label>
+            <input type="text" id="fnombre" name="fnombre" minlength="2" required>
+        </div>
+
+        <div class="campo">
+            <label for="lapellido">Apellido</label>
+            <input type="text" id="lapellido" name="lapellido" minlength="2" required>
+        </div>
+
+        <div class="campo">
+            <label for="lcorreo">Correo electrónico</label>
+            <input type="email" id="lcorreo" name="lcorreo" required>
+        </div>
+
+        <div class="campo">
+            <label for="lmensaje">Mensaje</label>
+            <textarea id="lmensaje" name="lmensaje" minlength="2" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
 </body>
 <footer>
     <p>©2026 Empresa de Video Juegos. Todos los derechos reservados.</p>
