@@ -15,7 +15,7 @@ header {
     top: 0;
     margin-bottom: 10px;
     margin-left: 20px;
-    background-color: #393751;
+    background-color: #577a93;
     color: white;
     padding: 10px;
     position: absolute;
@@ -27,7 +27,7 @@ header {
 
 footer {
     margin: 0;
-    padding: 10px;
+    padding: 0px;
     padding-left: 50px;
     position: fixed;
     text-align: left;
@@ -201,6 +201,7 @@ h2 {
     align-items: center;
     width: 100%;
 }
+
 .campo input,
 .campo textarea {
     padding: 10px;
@@ -210,6 +211,7 @@ h2 {
     width: 100%;
     box-sizing: border-box;
 }
+
 .botonEnviar {
     padding: 10px;
     background-color: #393751;
@@ -254,9 +256,10 @@ h2 {
     cursor: pointer;
     color: #000;
 }
+
 h2 {
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
