@@ -201,6 +201,29 @@ h2 {
     align-items: center;
     width: 100%;
 }
+.campo input,
+.campo textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.botonEnviar {
+    padding: 10px;
+    background-color: #393751;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 .contenedorcontacto form {
     display: flex;
@@ -209,11 +232,31 @@ h2 {
     width: 100%;
     max-width: 400px;
 }
+
 .campo {
     display: flex;
     flex-direction: column;
-     width: 250px;
-    
+    width: 250px;
+
+}
+
+.botonVolver {
+    padding: 10px;
+    background-color: #595959;
+    display: flex;
+    justify-content: center;
+    margin: 200px auto;
+    color: white;
+}
+
+.botonVolver:hover {
+    background-color: #b4b4b4;
+    cursor: pointer;
+    color: #000;
+}
+h2 {
+display: flex;
+justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -232,8 +275,9 @@ h2 {
     .imagenesproductos {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .campo {
-       
+
         width: 650px;
     }
 }
